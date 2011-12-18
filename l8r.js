@@ -41,8 +41,15 @@
 			return l8r.blockActions.indexOf( actionName ) >= 0;
 		},
 
-		nq: function( source, actionName )
+		getActionNameFromArgs: function( args )
 		{
+			return arguments.length > 1 ? arguments[ 1 ] : 'click';
+		},
+
+		nq: function( source )
+		{
+			var actionName = l8r.getActionNameFromArgs( arguments );
+
 			if (! l8r.isBlocked)
 			{
 				var info = {
