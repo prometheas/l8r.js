@@ -15,7 +15,7 @@ Enqueueing a high-level application event:
 
 l8r.js is inspired by work Alex Kessinger shared in a DailyJS post entitled [Flickr's Asynchronous Script Loading Part 2](http://dailyjs.com/2011/11/28/flickr-async-2/).  In this post, Alex takes a look at the following problem (from [part 1](http://dailyjs.com/2011/11/28/flickr-async)):
 
-    If you are using a script loader, or even if you are just putting your scripts at the bottom of your DOM, you have a problem. In some cases your scripts will load after the user has clicked on something that requires a JavaScript function to handle the click. It's possible you have a pure HTML version, but if the user has JavaScript enabled then we want to use it, even if the JavaScript hasn’t loaded yet. There needs to be a way of handling events before all of the assets have finished loading.
+> If you are using a script loader, or even if you are just putting your scripts at the bottom of your DOM, you have a problem. In some cases your scripts will load after the user has clicked on something that requires a JavaScript function to handle the click. It's possible you have a pure HTML version, but if the user has JavaScript enabled then we want to use it, even if the JavaScript hasn’t loaded yet. There needs to be a way of handling events before all of the assets have finished loading.
 
 While Alex's solution 
 
