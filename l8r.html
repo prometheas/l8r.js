@@ -1,0 +1,59 @@
+<html>
+<head>
+	<title>l8r test</title>
+	<script src="l8r.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript" charset="utf-8">
+		l8r.addBlockers(['foo', 'bar', 'baz'])
+	</script>
+</head>
+<body>
+
+	<h1>Event 1</h1>
+	<ul>
+		<li>
+			<a href="http://google.com" onclick="return l8r.nq(this, 'event.1')">Go to Google</a>
+		</li>
+		<li>
+			<a href="http://slashdot.org" onclick="return l8r.nq(this, 'event.1')">Go to /.</a>
+		</li>
+		<li>
+			<a href="http://bbcnews.com" onclick="return l8r.nq(this, 'event.1', true)">Go to BBC News</a> (blocks)
+		</li>
+	</ul>
+
+
+	<h1>Event 2</h1>
+	<ul>
+		<li>
+			<a href="http://facebook.com" onclick="return l8r.nq(this, 'event.2')">Go to Facebook</a>
+		</li>
+		<li>
+			<a href="http://apple.com" onclick="return l8r.nq(this, 'event.2', {foo:'bar'}, true)">Go to Apple (blocks)</a>
+		</li>
+	</ul>
+
+	<h1>Event foo</h1>
+	<ul>
+		<li>
+			<a href="http://facebook.com" onclick="return l8r.nq(this, 'foo')">Go to NextMovie</a>
+		</li>
+	</ul>
+
+	<button id="remove_onclicks">Remove onclicks</button>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript" charset="utf-8">
+		$(document).ready(function() {
+
+			$("#remove_onclicks").click(function(e) {
+				$("*[onclick]").each(function(index, item) {
+					$(item).attr('onclick', '');
+				})
+				return false;
+			})
+
+		});
+	</script>
+
+</body>
+</html>
